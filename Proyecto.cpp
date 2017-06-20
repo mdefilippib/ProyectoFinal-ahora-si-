@@ -1,5 +1,4 @@
 #include <iomanip>
-
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -71,7 +70,6 @@ public:
 	void agregarPunto(string nombre,float x, float y, string estado)
 	{	
 		int idx = listaPuntos.size() + 1;
-		//tring nombre = "Punto " + to_string(idx);
 		TPunto punto = {idx, nombre, x, y, 0, estado};
 
 		listaPuntos.push_back(punto);
@@ -280,24 +278,22 @@ int menu()
 	int opcion = 0;
 
 	do
-	{		
+	{	
+			system("clear");
 		cout << "MENU" << endl;
 		cout << string(4, '~') << endl << endl;
 
 		cout << "1. Agregar una nueva posicion." << endl;
 		cout << "2. Eliminar una posicion por nombre." << endl;
 		cout << "3. Listar 100 primeros puntos." << endl;
-		cout << "4. Listar los puntos ubicados alrededor del ingresado." << endl;
+		cout << "4. Listar los puntos ubicados alrededor." << endl;
 		cout << "5. Hallar la distancia de cada punto y obtener el promedio." << endl;
-		cout << "6. Comparar la distancia. " << endl;
-		cout << "7. Comparar la distancia." << endl;
+		cout << "6. Hallar la mayor distancia entre los puntos. " << endl;
+		cout << "7. Hallar la menor distancia entre los puntos." << endl;
 	    cout << "8. Listar los puntos con estado abierto a menos de 100 metros." << endl;
 		cout << "9. Filtrar ubicacion." << endl;
-
 		cout << "0. Para salir." << endl;
-
 		cout << "Opcion: " << endl;
-
 		cin >> opcion;
 		return opcion;
 	}
@@ -330,6 +326,8 @@ int main()
 		{
 		case 1:	
 		system("clear");
+			cout << "Ingrese el nombre del punto: ";
+			cin >> nombre; 
 			cout << "Ingrese posicion X: ";
 			cin >> x;	
 
@@ -363,8 +361,7 @@ int main()
 				cout << "Ingrese posicion Y: ";
 				cin >> y;
 			}
-			cout << "Ingrese el nombre del punto: ";
-			cin >> nombre;
+			
 			cout << "Ingrese el estado del local: ";
 			cin >> estado;
 
@@ -405,7 +402,7 @@ int main()
 			break;
 		case 4:	
 		system("clear");
-			printf("Ingrese posici%cn X: ", 162);
+			cout << "Ingrese posicion X: ";
 			cin >> x;	
 
 			while(1)
@@ -418,11 +415,11 @@ int main()
 				}				
 				else
 					break;
-				printf("Ingrese posici%cn X: ", 162);
+				cout << "Ingrese posicion X: ";
 				cin >> x;
 			}
 
-			printf("Ingrese posici%cn Y: ", 162);			
+			cout << "Ingrese posicion Y: ";			
 			cin >> y;		
 
 			while(1)
@@ -435,7 +432,7 @@ int main()
 				}				
 				else
 					break;
-				printf("Ingrese posici%cn Y: ", 162);
+				cout << "Ingrese posicion Y: ";
 				cin >> y;
 			}
 
